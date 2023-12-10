@@ -2,7 +2,7 @@
 
 namespace Meetings.Domain.ValueObjects;
 
-public sealed class CreationInfo
+public class CreationInfo
 {
     public DateTimeOffset CreatedAt { get; private set; }
     public UserId CreatedById { get; private set; }

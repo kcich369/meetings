@@ -9,10 +9,11 @@ public abstract record EntityId
         Value = new Ulid();
     }
 
-    protected EntityId(Ulid value)
+    protected EntityId(string value)
     {
-        Value = value;
+        Value =  Ulid.Parse(value);
     }
 
-    public override string ToString() => Value.ToString();
+    public static implicit operator string(EntityId id) => id.ToString();
+    public override string ToString() => Value.ToString() ?? string.Empty;
 }
