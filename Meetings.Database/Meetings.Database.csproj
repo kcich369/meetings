@@ -17,6 +17,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Meetings.Domain\Meetings.Domain.csproj" />
 
+
     </ItemGroup>
 
 

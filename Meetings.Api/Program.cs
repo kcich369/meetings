@@ -1,9 +1,11 @@
+using Meetings.Database.Extensions;
+using Meetings.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.RegisterInfrastructure(builder.Configuration.GetConnectionString("MeetingsDatabase")!);
 
 var app = builder.Build();
 
@@ -23,4 +25,6 @@ app.MapGet("/weatherforecast", () =>
     .WithName("GetWeatherForecast")
     .WithOpenApi();
 
+// await builder.Services
+//     .MigrateDatabase();
 app.Run();
