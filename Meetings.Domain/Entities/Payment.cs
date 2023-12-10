@@ -8,6 +8,8 @@ public class Payment : Entity<PaymentId>
 {
     public Amount Amount { get; set; }
     
+    public MeetingId MeetingId { get; private set; }
+    public Meeting Meeting { get; private set; }
     private Payment()
     {
     }

@@ -7,7 +7,7 @@ namespace Meetings.Database.ValueObjectsConfigurations;
 
 public static class AmountConfiguration
 {
-    public static OwnedNavigationBuilder<TEntity, TValueObject> ConfigureCreationInfo<TEntity, TValueObject>(
+    public static OwnedNavigationBuilder<TEntity, TValueObject> ConfigureAmount<TEntity, TValueObject>(
         this OwnedNavigationBuilder<TEntity, TValueObject> ow)
         where TEntity : class, IEntity where TValueObject : Amount
     {

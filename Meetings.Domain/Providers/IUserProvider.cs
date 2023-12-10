@@ -1,8 +1,8 @@
-﻿using Meetings.Domain.Entities;
+﻿using Meetings.Domain.ValueObjects;
 
 namespace Meetings.Domain.Providers;
 
 public interface IUserProvider
 {
-    User GetUser();
+    UserData GetUser();
 }
