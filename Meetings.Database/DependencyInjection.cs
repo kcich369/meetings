@@ -1,5 +1,7 @@
 ﻿using Meetings.Database.Context;
 using Meetings.Database.Interceptors;
+using Meetings.Database.Repositories;
+using Meetings.Domain.Repositories;
 using Meetings.Domain.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +24,9 @@ public static class DependencyInjection
                 );
         });
         serviceCollection.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
-        
+        serviceCollection.AddScoped<IAvailableDateRepository, IAvailableDateRepository>();
+        serviceCollection.AddScoped<IMeetingRepository, MeetingRepository>();
+
         return serviceCollection;
     }
 }

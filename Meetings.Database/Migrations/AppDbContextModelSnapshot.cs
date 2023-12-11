@@ -22,7 +22,7 @@ namespace Meetings.Database.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Meetings.Domain.Entities.AvailableDate", b =>
+            modelBuilder.Entity("Meetings.Domain.Entities.AvailableDateDto", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(26)");
@@ -100,7 +100,7 @@ namespace Meetings.Database.Migrations
                     b.ToTable("Payments", (string)null);
                 });
 
-            modelBuilder.Entity("Meetings.Domain.Entities.AvailableDate", b =>
+            modelBuilder.Entity("Meetings.Domain.Entities.AvailableDateDto", b =>
                 {
                     b.OwnsOne("Meetings.Domain.ValueObjects.CreationInfo", "CreationInfo", b1 =>
                         {
@@ -158,7 +158,7 @@ namespace Meetings.Database.Migrations
                                 .HasForeignKey("AvailableDateId");
                         });
 
-                    b.OwnsOne("Meetings.Domain.ValueObjects.Duration", "Duration", b1 =>
+                    b.OwnsOne("Meetings.Domain.ValueObjects.MeetingData", "MeetingData", b1 =>
                         {
                             b1.Property<string>("AvailableDateId")
                                 .HasColumnType("nvarchar(26)");
@@ -181,14 +181,14 @@ namespace Meetings.Database.Migrations
 
                     b.Navigation("CreationInfo");
 
-                    b.Navigation("Duration");
+                    b.Navigation("MeetingData");
 
                     b.Navigation("UpdateInfo");
                 });
 
             modelBuilder.Entity("Meetings.Domain.Entities.Meeting", b =>
                 {
-                    b.HasOne("Meetings.Domain.Entities.AvailableDate", "AvailableDate")
+                    b.HasOne("Meetings.Domain.Entities.AvailableDateDto", "AvailableDateDto")
                         .WithOne("Meeting")
                         .HasForeignKey("Meetings.Domain.Entities.Meeting", "AvailableDateId");
 
@@ -269,7 +269,7 @@ namespace Meetings.Database.Migrations
                                 .HasForeignKey("MeetingId");
                         });
 
-                    b.Navigation("AvailableDate");
+                    b.Navigation("AvailableDateDto");
 
                     b.Navigation("CreationInfo");
 
@@ -376,7 +376,7 @@ namespace Meetings.Database.Migrations
                     b.Navigation("UpdateInfo");
                 });
 
-            modelBuilder.Entity("Meetings.Domain.Entities.AvailableDate", b =>
+            modelBuilder.Entity("Meetings.Domain.Entities.AvailableDateDto", b =>
                 {
                     b.Navigation("Meeting");
                 });

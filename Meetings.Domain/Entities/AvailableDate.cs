@@ -6,7 +6,7 @@ namespace Meetings.Domain.Entities;
 
 public sealed class AvailableDate :Entity<AvailableDateId>
 {
-    public Duration Duration { get; private set; }
+    public MeetingData MeetingData { get; private set; }
     //relations
     public MeetingId MeetingId { get; private set; }
     public Meeting Meeting { get; private set; }
@@ -15,9 +15,9 @@ public sealed class AvailableDate :Entity<AvailableDateId>
     {
     }
 
-    public AvailableDate(AvailableDateId id, Duration duration)
+    public AvailableDate(AvailableDateId id, MeetingData meetingData)
     {
         Id = id;
-        Duration = duration;
+        MeetingData = meetingData;
     }
 }

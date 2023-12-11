@@ -14,6 +14,6 @@ public sealed class AvailableDateConfiguration : EntityConfiguration<AvailableDa
 
     protected override void ConfigureEntity(EntityTypeBuilder<AvailableDate> builder)
     {
-        builder.OwnsOne(x => x.Duration, ow => ow.ConfigureDuration());
+        builder.OwnsOne(x => x.MeetingData, ow => ow.ConfigureMeetingData());
     }
 }

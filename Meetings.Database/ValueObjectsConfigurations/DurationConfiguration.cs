@@ -7,14 +7,14 @@ namespace Meetings.Database.ValueObjectsConfigurations;
 
 public static class DurationConfiguration
 {
-    public static OwnedNavigationBuilder<TEntity, TValueObject> ConfigureDuration<TEntity, TValueObject>(
+    public static OwnedNavigationBuilder<TEntity, TValueObject> ConfigureMeetingData<TEntity, TValueObject>(
         this OwnedNavigationBuilder<TEntity, TValueObject> ow)
-        where TEntity : class, IEntity where TValueObject : Duration
+        where TEntity : class, IEntity where TValueObject : MeetingData
     {
         ow.Property(x => x.From).IsRequired()
-            .HasColumnName(nameof(Duration.From));
+            .HasColumnName(nameof(MeetingData.From));
         ow.Property(x => x.To).IsRequired()
-            .HasColumnName(nameof(Duration.To));
+            .HasColumnName(nameof(MeetingData.To));
       
         return ow;
     }
