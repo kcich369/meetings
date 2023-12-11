@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Meetings.Database.EntitiesConfigurations;
 
-public class AvailableDateConfiguration : EntityConfiguration<AvailableDate, AvailableDateId>
+public sealed class AvailableDateConfiguration : EntityConfiguration<AvailableDate, AvailableDateId>
 {
     public AvailableDateConfiguration() : base("AvailableDates")
     {

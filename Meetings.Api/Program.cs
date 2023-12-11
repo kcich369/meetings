@@ -18,13 +18,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/weatherforecast", () =>
-    {
-        return "Ok";
-    })
+app.MapGet("/weatherforecast", () => { return "Ok"; })
     .WithName("GetWeatherForecast")
     .WithOpenApi();
 
-// await builder.Services
-//     .MigrateDatabase();
+await builder.Services.MigrateDatabase();
 app.Run();
