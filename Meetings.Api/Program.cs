@@ -25,6 +25,6 @@ app.MapGet("/weatherforecast", () =>
     .WithName("GetWeatherForecast")
     .WithOpenApi();
 
-// await builder.Services
-//     .MigrateDatabase();
+await builder.Services
+    .MigrateDatabase();
 app.Run();
